@@ -11,12 +11,13 @@ public class Course {
     }
     
     public void doIt(final Team team) {
+        System.out.println("\nКоманда " + team.getName() + " стартовала!\n");
         for (Competitor c : team.teamMembers()) {
             for (Obstacle o : this.course) {
                 o.doIt(c);
             }
-            
-            team.setMemberFinish(c);
+    
+            team.addFinishedMember(c);
             team.finishedMembers();
         }
     }

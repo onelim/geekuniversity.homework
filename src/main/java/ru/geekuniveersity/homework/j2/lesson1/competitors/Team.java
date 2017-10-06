@@ -14,6 +14,9 @@ public class Team {
         this.finishedMembers = new ArrayList<>();
     }
     
+    public String getName() {
+        return teamName;
+    }
     public Competitor[] teamMembers() {
         return this.competitors;
     }
@@ -25,12 +28,14 @@ public class Team {
     }
     
     public void showResults() {
+        System.out.println("\nРезультаты команды " + this.teamName + ":");
         for (Competitor competitor : this.competitors) {
             competitor.info();
         }
     }
     
-    public void setMemberFinish(final Competitor competitor) {
+    public void addFinishedMember(final Competitor competitor) {
         this.finishedMembers.add(competitor);
     }
+    
 }

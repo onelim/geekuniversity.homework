@@ -15,6 +15,8 @@ public class Course {
         for (Competitor c : team.teamMembers()) {
             for (Obstacle o : this.course) {
                 o.doIt(c);
+    
+                if (!c.isOnDistance()) break;
             }
     
             team.addFinishedMember(c);

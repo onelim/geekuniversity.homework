@@ -28,20 +28,20 @@ public class Main {
         int sum = 0;
         
         if (arr.length < minSizeArr) throw new WrongSizeArrayException(arr, minSizeArr);
-        
-        int outterIndex = 0;
+    
+        int outerIndex = 0;
         
         for (Object[] nArr : arr) {
             if (nArr.length < minSizeArr) throw new WrongSizeArrayException(nArr, minSizeArr);
             
             for (int i = 0; i < nArr.length; i++) {
                 if (!(nArr[i] instanceof Number))
-                    throw new WrongDataArrayException(nArr[i], outterIndex, i);
+                    throw new WrongDataArrayException(nArr[i], outerIndex, i);
                 
                 sum += (int) nArr[i];
             }
-            
-            outterIndex++;
+    
+            outerIndex++;
         }
         
         return sum;
